@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext';
+import Home from './pages/Home';
+import Play from './pages/Play';
+import './theme.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <ThemeProvider>
+    <Router>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/play">Play</Link>
+      </nav>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/play" element={<Play />} />
+      </Routes>
+    </Router>
+  </ThemeProvider>
+);
 
 export default App;
