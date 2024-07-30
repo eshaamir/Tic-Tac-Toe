@@ -1,4 +1,3 @@
-// src/redux/gameSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {

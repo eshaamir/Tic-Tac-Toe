@@ -1,4 +1,3 @@
-// src/pages/Game.js
 import React, { useContext } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { playTurn, resetGame } from '../redux/gameSlice';
