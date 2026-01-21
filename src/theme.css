@@ -1,34 +1,89 @@
 body.light {
-  background-color: white;
-  color: black;
+  background-color: #f7f7f7;
+  color: #111;
 }
 
 body.dark {
-  background-color: #333;
-  color: white;
+  background-color: #111;
+  color: #f7f7f7;
 }
 
-nav {
+.app-root {
+  min-height: 100vh;
   display: flex;
-  justify-content: space-around;
-  padding: 1rem;
-  background-color: #282c34;
-  border-bottom: 2px solid #61dafb;
+  flex-direction: column;
 }
 
-nav a {
-  color: white;
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+body.light .app-header {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+body.dark .app-header {
+  background-color: rgba(20, 20, 20, 0.9);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.brand {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
   text-decoration: none;
-  font-size: 1.2rem;
+  color: inherit;
+  opacity: 0.8;
+  transition: opacity 0.15s ease;
 }
 
-nav a:hover {
-  text-decoration: underline;
+.nav-links a:hover {
+  opacity: 1;
 }
 
-.home, .game {
+.theme-toggle {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.home,
+.game {
   text-align: center;
-  padding: 2rem;
+  max-width: 420px;
+  width: 100%;
 }
 
 .board {
@@ -57,6 +112,12 @@ nav a:hover {
 .status {
   margin-top: 20px;
   font-size: 1.5rem;
+}
+
+.home-text {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  opacity: 0.8;
 }
 
 button {

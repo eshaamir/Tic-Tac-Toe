@@ -19,7 +19,6 @@ const Game = () => {
 
   return (
     <div className={`game ${theme}`}>
-      <h1>Tic Tac Toe</h1>
       <Board squares={board} onClick={handleSquareClick} />
       <div className="status">
         {winner ? `Winner: ${winner}` : `Next player: ${xIsNext ? 'X' : 'O'}`}
